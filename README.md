@@ -5,7 +5,7 @@
 ### [Visit the website →](http://www.maas38.com)
 
 ## Getting Started
-This installation requires NodeJS and Grunt `~0.4.1`. Eventually we will introduce SASS wich will require SASS, bourbon and Ruby as well.
+This installation requires NodeJS and Grunt `~0.4.1`. Eventually we will introduce SASS wich will require SASS, bourbon and libsass.org as well.
 
 Our default task makes our complete package for distribution. Make sure to update versioning inside "package.json" when deploying (use SNAPSHOT's only when testing). It will deliver a zip which can be diffed with our previous one.
 
