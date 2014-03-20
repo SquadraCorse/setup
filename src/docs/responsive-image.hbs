@@ -1,0 +1,29 @@
+---
+title: Responsive Image
+intro: Use native images, lazy containers or simply the API to get the best available image for the client side. Always make sure to use the right aspect ratio so your site will not reflow.
+---
+
+<div id="docs-img-example">
+
+<p class="fb-img-reset-me-container fb-img-ratio-3-2">
+	<img src="//img.static-afkl.com/app/sa/997-1-l.jpg " title="Flying Blue" class="js-fb-img fb-img-native" data-img-type="native" srcset="//img.static-afkl.com/app/sa/997-1-s.jpg 480w, //img.static-afkl.com/app/sa/997-1-m.jpg 768w, //img.static-afkl.com/app/sa/997-1-l.jpg 1x, //img.static-afkl.com/app/sa/997-1-m.jpg 480w 2x, //img.static-afkl.com/app/sa/997-1-l.jpg 768w 2x, //img.static-afkl.com/app/sa/997-1-xl.jpg 2x">
+</p>
+
+<p>
+    <span data-srcset="http://dummyimage.com/480x320/000/fff.png 480w, http://dummyimage.com/800x530/000/fff.png 768w, http://dummyimage.com/960x640/000/fff.png 1x, http://dummyimage.com/960x640/000/fff.png 480w 2x, http://dummyimage.com/1200x800/000/fff.png 768w 2x" class="js-fb-img fb-img-ratio-3-2"></span>
+</p>
+
+<p>
+    <span data-srcset="//img.static-afkl.com/app/sa/997-1-s.jpg 480w, //img.static-afkl.com/app/sa/997-1-m.jpg 768w, //img.static-afkl.com/app/sa/997-1-l.jpg 1x, //img.static-afkl.com/app/sa/997-1-m.jpg 480w 2x, //img.static-afkl.com/app/sa/997-1-l.jpg 768w 2x, //img.static-afkl.com/app/sa/997-1-xl.jpg 2x" class="js-fb-img fb-img-lazy fb-img-ratio-3-2" data-img-type="lazy">Alternative content...</span>
+</p>
+
+<p>
+    <span data-srcset="http://dummyimage.com/480x270/000/fff.png 480w, http://dummyimage.com/800x450/000/fff.png 768w, http://dummyimage.com/960x540/000/fff.png 1x, http://dummyimage.com/960x540/000/fff.png 480w 2x, http://dummyimage.com/1280x720/000/fff.png 2x" class="js-fb-img fb-img-lazy fb-img-ratio-16-9" data-img-type="lazy"></span>
+</p>
+</div>
+
+<script>
+	require(["fb/img-responsive"], function ($Image) {
+		$Image.init({container: '#docs-img-example'});
+	});
+</script>

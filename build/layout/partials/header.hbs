@@ -1,0 +1,12 @@
+<div class="docs-header docs-header-{{this.environment}}">
+	<span class="fb-icon">FB {{this.environment}} v{{version}}</span>
+	<span class="docs-main-menu" onclick="javascript:var e = document.getElementById('docs-menu'); switch(e.className){ case 'fb-hidden': e.className = ''; break; default: e.className = 'fb-hidden'; break; }">M</span>
+</div>
+
+{{> nav }}
+
+
+<h1 class="docs-title">{{title}}</h1>
+
+<div class="docs-intro">{{intro}}</div>
+

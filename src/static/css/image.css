@@ -1,0 +1,50 @@
+.js .fb-img-lazy,
+.fb-img-reset-me-container {
+    position:relative;
+    height:0;
+    overflow:hidden;
+    display:block
+}
+.fb-img-native,
+.fb-img-replace-me {
+    width:100%
+}
+.js-fb-img {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+.fb-img-loading {
+    opacity: 0.3;
+    -webkit-transition: opacity 0.5s ease;
+    -moz-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+}
+/* available ratio's on FB website */
+
+.fb-img-ratio-4-2 {
+    padding-bottom: 50%;	/* 2/4*100 */
+}
+.fb-img-ratio-16-9 {
+    padding-bottom: 56.25%; /* 9/16*100 */
+}
+.fb-img-ratio-3-2 {
+    padding-bottom: 66.67%;
+}
+.fb-img-ratio-4-3 {
+    padding-bottom: 75%;
+}
+.fb-img-ratio-1-1 {
+    padding-bottom: 100%;
+}
+.fb-img-ratio-2-3 {
+    padding-bottom: 150%;
+}
+.fb-img-ratio-3-4 {
+    padding-bottom: 133%;
+}
+.fb-img-ratio-9-16 {
+    padding-bottom: 177.77%;
+}
+

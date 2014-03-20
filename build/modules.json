@@ -1,0 +1,20 @@
+{
+  "modules": {
+    "heading": "Componenten ...",
+    "content": "Introduction",
+    "list": [
+      {
+        "name": "Responsive Image",
+        "link": "responsive-image.html"
+      },
+      {
+        "name": "Window Events",
+        "link": "window-events.html"
+      },
+      {
+        "name": "Pubsub",
+        "link": "pubsub.html"
+      }
+    ]
+  }
+}

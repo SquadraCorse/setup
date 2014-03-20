@@ -1,0 +1,8 @@
+{
+    "box-model" : false,
+    "star-property-hack" : false,
+    "underscore-property-hack" : false,
+    "unique-headings": false,
+    "known-properties": false,
+    "adjoining-classes" : false
+}

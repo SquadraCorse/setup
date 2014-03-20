@@ -1,0 +1,30 @@
+# add type, not default mime-type
+
+AddType image/svg+xml                  svg svgz
+AddType application/vnd.ms-fontobject  eot
+AddType application/x-font-ttf         ttf ttc
+AddType font/opentype                  otf
+AddType application/font-woff          woff
+
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  <IfModule mod_headers.c>
+	    # Webfont access and cachecontrol
+		Header append Cache-Control "max-age=31536000, public"
+		# akamai
+		Header append Edge-Control "max-age=31536000"
+  </IfModule>
+
+</IfModule>
+
+
+# ----------------------------------------------------------------------
+# ETag removal
+# ----------------------------------------------------------------------
+
+# Since we're sending far-future expires, we don't need ETags for
+# static content.
+#   developer.yahoo.com/performance/rules.html#etags
+FileETag None

@@ -1,0 +1,5 @@
+src/static/js/jquery.js
+src/static/js/text.js
+src/static/js/i18n.js
+src/static/require.js
+src/static/modernizr.js

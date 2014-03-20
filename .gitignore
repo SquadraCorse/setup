@@ -1,0 +1,7 @@
+/.project
+/.settings
+/.DS_Store
+target
+node_modules
+test/visuals/screenshots
+src/_docs

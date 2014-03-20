@@ -1,0 +1,30 @@
+# add type, not default mime-type
+
+AddType application/javascript       js
+AddType text/javascript              js
+
+
+<IfModule mod_expires.c>
+  ExpiresActive on
+
+  <IfModule mod_headers.c>
+	    # Webfont access and cachecontrol
+		Header append Cache-Control "max-age=31536000, public"
+		# akamai
+		Header append Edge-Control "max-age=31536000"
+  </IfModule>
+
+</IfModule>
+
+# force utf-8 for a number of file formats
+AddCharset utf-8 .html .css .js
+
+
+# ----------------------------------------------------------------------
+# ETag removal
+# ----------------------------------------------------------------------
+
+# Since we're sending far-future expires, we don't need ETags for
+# static content.
+#   developer.yahoo.com/performance/rules.html#etags
+FileETag None
