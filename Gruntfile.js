@@ -246,7 +246,7 @@ module.exports = function (grunt) {
                     layout: 'default-live.hbs'
                 },
                 src: ['src/docs/*.hbs'],
-                dest: 'target/build/docs/'
+                dest: 'target/build/'
             }
         },
 
@@ -292,7 +292,7 @@ module.exports = function (grunt) {
                     hostname: 'localhost',
                     port: 9900,
                     base: ['./target/build'],
-                    open: 'http://localhost:9900/docs/index.html',
+                    open: 'http://localhost:9900/index.html',
                     keepalive: true,
                     middleware: function (connect, options) {
                         var config = [ // Serve static files.
