@@ -3,9 +3,16 @@
 
     "version": "0.0.1-SNAPSHOT",
 
+    "homepage": "http://squadracorse.github.io/setup-front-end/",
+
+    "author": {
+        "name": "Maarten van Oudenniel",
+        "url": "http://oudenniel.nl"
+    },
+
     "repository" : { 
         "type" : "git",
-        "url" : "http://git-url-here"
+        "url" : "http://github.com/SquadraCorse/setup-front-end"
     },
 
     "devDependencies": {

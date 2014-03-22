@@ -50,4 +50,4 @@ Happy coding. Work from master, make a feature branch if you wish to upgrade a c
 
 ## Release History
 
-12-03-2014 v1.0.0 Basic setup using Grunt and Require for building/testing and documentation
+22-03-2014 v0.0.1 Basic setup using Grunt and Require for building/testing and documentation
