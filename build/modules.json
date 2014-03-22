@@ -8,6 +8,10 @@
         "link": "responsive-image.html"
       },
       {
+        "name": "Styling",
+        "link": "styling.html"
+      },
+      {
         "name": "Window Events",
         "link": "window-events.html"
       },

@@ -254,7 +254,7 @@ module.exports = function (grunt) {
             options: {},
             desktop: {
                 options: {
-                    screenshots: 'test/visuals/screenshots/desktop/',
+                    screenshots: 'test/visuals/tmp/screenshots/desktop/',
                     results: 'target/reports/visuals/desktop',
                     viewportSize: [1024, 768]
                 },
@@ -264,7 +264,7 @@ module.exports = function (grunt) {
             },
             mobile: {
                 options: {
-                    screenshots: 'test/visuals/screenshots/mobile/',
+                    screenshots: 'test/visuals/tmp/screenshots/mobile/',
                     results: 'target/reports/visuals/mobile',
                     viewportSize: [320, 480]
                 },
@@ -280,7 +280,8 @@ module.exports = function (grunt) {
             options: {
                 threshold: 86,
                 run: false,
-                reporter: 'mocha-phantom-coverage-reporter'
+                // reporter: 'Nyan'
+                // reporter: 'mocha-phantom-coverage-reporter'
             }
         },
 
@@ -378,8 +379,8 @@ module.exports = function (grunt) {
     grunt.registerTask('lint', ['csslint', 'jshint']);
 
     // Run from release tag first (to make screenshots to resemble), then check after your development is done
-    // grunt server
-    grunt.registerTask('visual', ['phantomcss']);
+    // first: grunt dev (so you have screenshots to match against)
+    grunt.registerTask('visual', ['clean:all', 'phantomcss']);
 
     // Headless testing and browser testing with code coverage
     grunt.registerTask('test', ['blanket_mocha', 'connect:test']);

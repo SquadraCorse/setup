@@ -3,5 +3,5 @@
 /.DS_Store
 target
 node_modules
-test/visuals/screenshots
+test/visuals/tmp
 src/_docs
