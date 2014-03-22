@@ -2,7 +2,7 @@
 
 > Static front-end code for our website FB with total package for testing and deploying our complete code. We can easily deliver components and build new versions using grunt.
 
-### [Visit the website →](http://squadracorse.github.io/setup-front-end)
+### [Visit the website →](http://squadracorse.github.io/build-frontend/)
 
 ## Getting Started
 This installation requires NodeJS and Grunt `~0.4.1`. Eventually we will introduce SASS wich will require SASS, bourbon and libsass.org as well.
@@ -44,7 +44,7 @@ Happy coding. Work from master, make a feature branch if you wish to upgrade a c
 
 **Maarten van Oudenniel**
 
-+ [github/squadracorse](http://squadracorse.github.io/setup-front-end)
++ [github/squadracorse](http://squadracorse.github.io/build-frontend)
 + [maas38](http://maas38.com)
 
 
