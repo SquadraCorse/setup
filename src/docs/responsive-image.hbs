@@ -6,7 +6,7 @@ intro: Use native images, lazy containers or simply the API to get the best avai
 <div id="docs-img-example">
 
 <p class="fb-img-reset-me-container fb-img-ratio-3-2">
-	<img src="//img.static-afkl.com/app/sa/997-1-l.jpg " title="Flying Blue" class="js-fb-img fb-img-native" data-img-type="native" srcset="//img.static-afkl.com/app/sa/997-1-s.jpg 480w, //img.static-afkl.com/app/sa/997-1-m.jpg 768w, //img.static-afkl.com/app/sa/997-1-l.jpg 1x, //img.static-afkl.com/app/sa/997-1-m.jpg 480w 2x, //img.static-afkl.com/app/sa/997-1-l.jpg 768w 2x, //img.static-afkl.com/app/sa/997-1-xl.jpg 2x">
+	<img src="//img.static-afkl.com/app/sa/997-1-l.jpg " title="FB" class="js-fb-img fb-img-native" data-img-type="native" srcset="//img.static-afkl.com/app/sa/997-1-s.jpg 480w, //img.static-afkl.com/app/sa/997-1-m.jpg 768w, //img.static-afkl.com/app/sa/997-1-l.jpg 1x, //img.static-afkl.com/app/sa/997-1-m.jpg 480w 2x, //img.static-afkl.com/app/sa/997-1-l.jpg 768w 2x, //img.static-afkl.com/app/sa/997-1-xl.jpg 2x">
 </p>
 
 <p>
@@ -27,3 +27,48 @@ intro: Use native images, lazy containers or simply the API to get the best avai
 		$Image.init({container: '#docs-img-example', treshold: 300});
 	});
 </script>
+
+<h2>Native image setup</h2>
+
+<p>The parent container will be the image wrapper. You need to give this the image ratio css class as well (all available ratio's are defined in our master css).</p>
+
+<code>
+&lt;p class=&quot;fb-img-reset-me-container fb-img-ratio-3-2&quot;&gt;<br/>
+&nbsp;&nbsp;&lt;img src=&quot;//img.static-afkl.com/app/sa/997-1-l.jpg &quot; title=&quot;FB&quot; class=&quot;js-fb-img fb-img-native&quot; data-img-type=&quot;native&quot; srcset=&quot;//img.static-afkl.com/app/sa/997-1-s.jpg 480w, //img.static-afkl.com/app/sa/997-1-l.jpg 1x, //img.static-afkl.com/app/sa/997-1-m.jpg 480w 2x, //img.static-afkl.com/app/sa/997-1-l.jpg 768w 2x, //img.static-afkl.com/app/sa/997-1-xl.jpg 2x&quot;&gt;<br/>
+&lt;/p&gt;
+</code>
+
+<h2>Lazy image</h2>
+<p>You can also lazy load an image. When giving it the data attribute 'data-img-type' the value 'lazy' it will only load the image when the container is in viewport of the user. If not it will always load the image. You can optionally have alternative content in the container. As soon as JavaScript kicks in it will be replaced.</p>
+
+<code>
+&lt;p&gt;<br />
+&nbsp;&nbsp;&lt;span data-srcset=&quot;http://dummyimage.com/480x270/000/fff.png 480w, http://dummyimage.com/800x450/000/fff.png 768w, http://dummyimage.com/960x540/000/fff.png 1x, http://dummyimage.com/960x540/000/fff.png 480w 2x, http://dummyimage.com/1280x720/000/fff.png 2x&quot; class=&quot;js-fb-img fb-img-lazy fb-img-ratio-16-9&quot; data-img-type=&quot;lazy&quot;&gt;&lt;/span&gt;<br />
+&lt;/p&gt;
+</code>
+
+<h2>Start</h2>
+
+<p>You can start the module by requiring it and give it the container the images are in (or leave it blank so module will look in whole document), and overrule the treshold for loading lazy images.</p>
+
+<code>
+&lt;script&gt;<br />
+&nbsp;&nbsp;require([&quot;fb/img-responsive&quot;], function ($Image) {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$Image.init({container: '#docs-img-example', treshold: 300});<br />
+&nbsp;&nbsp;});<br />
+&lt;/script&gt;<br />
+</code>
+
+<p>After initiated you can use:</p>
+
+<p>
+$image.crawl({container: 'selector-view'}); when you added new containers.<br />
+$image.clean({container: 'selector-view-you-want-to-be-cleaned'}); to clean up (when SPA no detached state will be there).<br/>
+$image.html({srcset: 'string holding srcset like in examples above'}); to give you the right image html tag (when you need it in your _.template and don't want to crawl for it).
+</p>
+
+
+
+
+
+
