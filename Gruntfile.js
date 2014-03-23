@@ -426,7 +426,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
 
     // Default grunt task
-    grunt.registerTask('default', ['clean:all', 'jshint', 'requirejs', 'replace:path', 'copy', 'concat', 'clean:static', 'sass:live', 'replace:css', 'assemble', 'compress', 'server']);
+    grunt.registerTask('default', ['clean:all', 'jshint', 'blanket_mocha', 'requirejs', 'replace:path', 'copy', 'concat', 'clean:static', 'sass:live', 'replace:css', 'assemble', 'compress', 'server']);
 
     // Develop (changes docs/css/js have livereload)
     grunt.registerTask('dev', ['assemble:development', 'connect:development', 'watch']);
