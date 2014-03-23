@@ -21,4 +21,9 @@ casper.thenOpen('http://localhost:9901/src/_docs/responsive-image.html').then(fu
 
 	phantomcss.screenshot('.docs-example', 'footer');
 
+}).thenOpen('http://localhost:9901/src/_docs/grid.html').then(function() {
+	"use strict";
+
+	phantomcss.screenshot('.docs-example', 'grid');
+
 });
