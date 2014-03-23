@@ -3,7 +3,7 @@ title: Window Events
 intro: Window-events is a central window events handler, for scroll and resize. It will set just one scroll and resize listener, if at least one script needs it. At that point no new listeners will be set, and all events will be published
 ---
 
-
+<div class="fb-row">
 
 <div class="docs-info">
     <p>resize 1 and resize 2 should be called on end (debounce)</p>
@@ -22,9 +22,10 @@ intro: Window-events is a central window events handler, for scroll and resize. 
     <button class="fb-btn" id="removeResize1Button"><span>remove resize1</span></button>
 </div>
 
+</div>
+
 <script>
 
-    // fix non existant console
     if (!window.console) {
         console = {
             log : function () {}
@@ -38,9 +39,6 @@ intro: Window-events is a central window events handler, for scroll and resize. 
             console.log(arg);
         }
     });
-</script>
-
-<script>
     
     require(['fb/jquery', 'fb/window-events'], function ($, $windowEvents) {
 

@@ -30,16 +30,20 @@ a:hover {
 
 /* CLEARFIX */
 .fb-clear:before,
-.fb-clear:after {
+.fb-clear:after,
+.fb-row:before,
+.fb-row:after {
     content: " ";
     display: table;
 }
 
-.fb-clear:after {
+.fb-clear:after,
+.fb-row:after {
     clear: both;
 }
 
-.lt-ie8 .fb-clear {
+.lt-ie8 .fb-clear,
+.lt-ie8 .fb-row {
     zoom: 1;
 }
 

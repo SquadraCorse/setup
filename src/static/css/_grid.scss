@@ -1,1 +1,73 @@
 /* RESPONSIVE GRID */
+
+.fb-row {
+	width: 984px;
+	margin: 0 auto;
+	overflow: visible;
+}
+.fb-row-indent {
+	padding-left: 2.6%;
+	padding-right: 2.6%;
+}
+
+
+.fb-row .fb-grid-span3  { width:23.05%; }
+.fb-row .fb-grid-span4  { width:31.6%;  }
+.fb-row .fb-grid-span6  { width:48.7%;  }
+.fb-row .fb-grid-span8  { width:65.8%;  }
+.fb-row .fb-grid-span9  { width:74.35%; }
+.fb-row .fb-grid-span12 { width:100%;   }
+
+.fb-row .fb-grid-span3,
+.fb-row .fb-grid-span4,
+.fb-row .fb-grid-span6,
+.fb-row .fb-grid-span8,
+.fb-row .fb-grid-span9,
+.fb-row .fb-grid-span12 {
+	float: left;
+	margin-left: 2.6%;
+}
+
+.fb-row .fb-grid-span3:first-child,
+.fb-row .fb-grid-span4:first-child,
+.fb-row .fb-grid-span6:first-child,
+.fb-row .fb-grid-span8:first-child,
+.fb-row .fb-grid-span9:first-child,
+.fb-row .fb-grid-span12:first-child {
+	margin-left: 0;
+}
+
+.fb-grid-span3 .fb-row ,
+.fb-grid-span4 .fb-row ,
+.fb-grid-span6 .fb-row ,
+.fb-grid-span8 .fb-row ,
+.fb-grid-span9 .fb-row ,
+.fb-grid-span12 .fb-row  {
+	width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+
+	.fb-row {
+		width: 100%;
+		margin: 0;
+	}
+
+}
+
+@media screen and (max-width: 700px){
+	.fb-row .fb-grid-span3,
+	.fb-row .fb-grid-span4,
+	.fb-row .fb-grid-span6,
+	.fb-row .fb-grid-span8,
+	.fb-row .fb-grid-span9,
+	.fb-row .fb-grid-span12 { 
+		width: 100%;
+		margin: 0
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+
+}
