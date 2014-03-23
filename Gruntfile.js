@@ -285,6 +285,16 @@ module.exports = function (grunt) {
                     'test/visuals/*.js'
                 ]
             },
+            tablet: {
+                options: {
+                    screenshots: 'test/visuals/tmp/screenshots/tablet/',
+                    results: 'target/reports/visuals/tablet',
+                    viewportSize: [768, 1024]
+                },
+                src: [
+                    'test/visuals/*.js'
+                ]
+            },
             mobile: {
                 options: {
                     screenshots: 'test/visuals/tmp/screenshots/mobile/',
