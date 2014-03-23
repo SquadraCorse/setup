@@ -1,7 +1,9 @@
 /.project
 /.settings
 /.DS_Store
+.sass-cache
 target
 node_modules
 test/visuals/tmp
 src/_docs
+src/static/_css

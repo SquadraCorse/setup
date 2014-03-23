@@ -119,7 +119,8 @@ module.exports = function (grunt) {
                 src: [
                     'target/build/static/<%= pkg.version %>/core.js',
                     'target/build/static/<%= pkg.version %>/build.txt',
-                    'target/build/static/<%= pkg.version %>/css/!(style|docs).css' // Remove everything except style.css or foo.css (future)
+                    'target/build/static/<%= pkg.version %>/_css/**',
+                    'target/build/static/<%= pkg.version %>/css/**' // Remove everything except style.css or foo.css (future)
                 ]
             },
             'all': {
@@ -192,22 +193,22 @@ module.exports = function (grunt) {
                 }
             },
             docs: {
-                files: ['src/static/css/*.css', 'src/docs/**/*.hbs', 'build/layout/**/*.hbs'],
+                files: ['src/docs/**/*.hbs', 'build/layout/**/*.hbs'],
                 tasks: ['assemble:development'],
                 options: {
                     spawn: false,
                     livereload: true
                 }
+            },
+            css: {
+                files: 'src/static/css/**/*.scss',
+                tasks: ['sass:development'],
+                options: {
+                    atBegin: true
+                }
             }
-            /* SASS LIVE RELOAD */
-            //css: {
-            //    files: '**/*.sass',
-            //    tasks: ['sass'],
-            //    options: {
-            //        livereload: true,
-            //    }
-            //}
         },
+
 
         // zip our versionized frontend code
         compress: {
@@ -353,7 +354,29 @@ module.exports = function (grunt) {
                     }
                 }
             }
+        },
+
+    sass: {
+        development: {
+            options: {
+                lineNumbers: true,
+                style: 'expanded'
+            },
+            files: {
+                'src/static/_css/style.css': 'src/static/css/style.scss',
+                'src/static/_css/docs.css': 'src/static/css/docs.scss'
+            }
+        },
+        live: {
+            options: {
+                style: 'compressed'
+            },
+            files: {
+                'target/build/static/<%= pkg.version %>/css/style.css': 'src/static/css/style.scss',
+                'target/build/static/<%= pkg.version %>/css/docs.css': 'src/static/css/docs.scss'
+            }
         }
+    }
 
 
 
@@ -375,9 +398,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-text-replace');
     grunt.loadNpmTasks('grunt-phantomcss');
     grunt.loadNpmTasks("grunt-blanket-mocha");
+    grunt.loadNpmTasks('grunt-contrib-sass');
 
     // Default grunt task
-    grunt.registerTask('default', ['clean:all', 'jshint', 'requirejs', 'replace', 'copy', 'concat', 'clean:static', 'assemble', 'compress', 'server']);
+    grunt.registerTask('default', ['clean:all', 'jshint', 'requirejs', 'replace', 'copy', 'concat', 'clean:static', 'sass:live', 'assemble', 'compress', 'server']);
 
     // Develop (changes docs/css/js have livereload)
     grunt.registerTask('dev', ['assemble:development', 'connect:development', 'watch']);

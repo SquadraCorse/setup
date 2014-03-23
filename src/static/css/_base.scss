@@ -1,0 +1,67 @@
+/* VARS */
+$text-color: #333;
+
+/* MIXINS */
+
+
+body, html { padding: 0; margin: 0; }
+
+html {
+    -webkit-text-size-adjust: 100%; /* 2 */
+    -ms-text-size-adjust: 100%; /* 2 */
+}
+
+body {
+    color: $text-color;
+    font: 12px/1.5 verdana, arial;
+    background: #fff;
+}
+
+a,
+a:visited {
+    color: #042452;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* CLEARFIX */
+.fb-clear:before,
+.fb-clear:after {
+    content: " ";
+    display: table;
+}
+
+.fb-clear:after {
+    clear: both;
+}
+
+.lt-ie8 .fb-clear {
+    zoom: 1;
+}
+
+/* HIDDEN */
+.fb-hidden { 
+    display: none !important;
+    visibility: hidden;
+}
+
+
+
+/* PRINTING */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow:none !important;
+        text-shadow: none !important;
+    }
+}
+
+
+
+
+
