@@ -94,7 +94,7 @@ module.exports = function (grunt) {
 
 
         // concat css/js files
-        concat : {
+        'concat' : {
             'build' : {
                 'files' : {
                     // MAIN FILE CACHING AT MOST 1 DAY
@@ -116,7 +116,7 @@ module.exports = function (grunt) {
         // Clean up some files
         'clean': {
             'static': {
-                src: [
+                'src': [
                     'target/build/static/<%= pkg.version %>/core.js',
                     'target/build/static/<%= pkg.version %>/build.txt',
                     'target/build/static/<%= pkg.version %>/_css/**',
@@ -124,8 +124,8 @@ module.exports = function (grunt) {
                 ]
             },
             'all': {
-                src: ['target/**']
-            },
+                'src': ['target/**']
+            }
         },
 
         // Versionize our R.js content and set expiracy
@@ -152,6 +152,21 @@ module.exports = function (grunt) {
                     {
                         from: '${project.version}',
                         to: '<%= pkg.version %>'
+                    }
+                ]
+            },
+            // PUT SASSED DECLARATIONS ON SINGLE LINE
+            css : {
+                src: ['target/sass/*.css'],
+                dest: 'target/build/static/<%= pkg.version %>/css/',
+                replacements: [
+                    {
+                        from: '}',
+                        to: '}\n'
+                    },
+                    {
+                        from: '){',
+                        to: '){\n'
                     }
                 ]
             }
@@ -356,31 +371,31 @@ module.exports = function (grunt) {
             }
         },
 
-    sass: {
-        development: {
-            options: {
-                lineNumbers: true,
-                style: 'expanded'
+        sass: {
+            development: {
+                options: {
+                    lineNumbers: true,
+                    style: 'expanded'
+                },
+                files: {
+                    'src/static/_css/style.css': 'src/static/css/style.scss',
+                    'src/static/_css/docs.css': 'src/static/css/docs.scss'
+                }
             },
-            files: {
-                'src/static/_css/style.css': 'src/static/css/style.scss',
-                'src/static/_css/docs.css': 'src/static/css/docs.scss'
-            }
-        },
-        live: {
-            options: {
-                style: 'compressed'
-            },
-            files: {
-                'target/build/static/<%= pkg.version %>/css/style.css': 'src/static/css/style.scss',
-                'target/build/static/<%= pkg.version %>/css/docs.css': 'src/static/css/docs.scss'
+            live: {
+                options: {
+                    style: 'compressed'
+                },
+                files: {
+                    'target/sass/style.css': 'src/static/css/style.scss',
+                    'target/sass/docs.css': 'src/static/css/docs.scss'
+                }
             }
         }
-    }
-
 
 
     });
+
 
     // Load tasks
     grunt.loadNpmTasks('grunt-contrib-requirejs');
@@ -401,7 +416,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
 
     // Default grunt task
-    grunt.registerTask('default', ['clean:all', 'jshint', 'requirejs', 'replace', 'copy', 'concat', 'clean:static', 'sass:live', 'assemble', 'compress', 'server']);
+    grunt.registerTask('default', ['clean:all', 'jshint', 'requirejs', 'replace:path', 'copy', 'concat', 'clean:static', 'sass:live', 'replace:css', 'assemble', 'compress', 'server']);
 
     // Develop (changes docs/css/js have livereload)
     grunt.registerTask('dev', ['assemble:development', 'connect:development', 'watch']);
