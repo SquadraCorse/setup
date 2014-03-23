@@ -193,8 +193,8 @@ module.exports = function (grunt) {
                 ]
             },
             'build' : {
-                // exclude style.css (just for dev, including import)
-                'src' : ['src/static/css/!(style|foo).css']
+                // check sass build file for linting
+                'src' : ['src/static/_css/*.css']
             }
         },
 
@@ -432,6 +432,7 @@ module.exports = function (grunt) {
     grunt.registerTask('dev', ['assemble:development', 'connect:development', 'watch']);
 
     // Check for our coding conventions
+    // first: grunt sass:development
     grunt.registerTask('lint', ['csslint', 'jshint']);
 
     // Run from release tag first (to make screenshots to resemble), then check after your development is done
