@@ -231,21 +231,28 @@ module.exports = function (grunt) {
                 version: '<%= pkg.version %>',
                 // assets: 'assets',
                 layoutdir: 'build/layout',
-                partials: ['build/layout/partials/*.hbs'],
+                partials: ['build/layout/partials/*.hbs', 'src/docs/*.hbs'],
                 data: ['build/*.{json,yml}']
             },
             development: {
                 options: {
                     layout: 'default-dev.hbs'
                 },
-                src: ['src/docs/*.hbs'],
+                src: ['src/docs/!(master-template).hbs'],
                 dest: 'src/_docs/'
             },
             live: {
                 options: {
                     layout: 'default-live.hbs'
                 },
-                src: ['src/docs/*.hbs'],
+                src: ['src/docs/!(master-template).hbs'],
+                dest: 'target/build/'
+            },
+            page: {
+                options: {
+                    layout: 'default-site.hbs'
+                },
+                src: ['src/docs/master-template.hbs'],
                 dest: 'target/build/'
             }
         },

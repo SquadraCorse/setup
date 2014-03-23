@@ -8,8 +8,12 @@
         "link": "responsive-image.html"
       },
       {
-        "name": "Styling",
+        "name": "STYLE: button",
         "link": "styling.html"
+      },
+      {
+        "name": "STYLE: footer",
+        "link": "footer.html"
       },
       {
         "name": "Window Events",

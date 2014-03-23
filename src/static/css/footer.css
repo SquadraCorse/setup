@@ -1,0 +1,41 @@
+
+.fb-footer {
+	color: #fff;
+}
+
+.fb-footer-carriers-wrapper {
+	background: #fff;
+	padding: 5 0px;
+	margin: 0;
+	color: #000;
+}
+
+/* Carriers */
+.fb-footer-carriers {
+	list-style: none;
+    text-align: center;
+}
+
+.fb-footer-carrier {
+    display: inline;
+    margin-right: 10px;
+}
+.fb-footer-carrier:last-child {
+	margin-right: 0;
+}
+
+
+.fb-footer-wrapper {
+	background: #888 url('../img/bg-footer.jpg') repeat-x 0 0;
+}
+
+/* notification */
+.fb-footer-notice {
+	min-height: 170px;
+	padding-top: 10px;
+}
+
+/* copyright */
+.fb-footer-copyright {
+	padding: 5px 0;
+}

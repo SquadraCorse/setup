@@ -65,7 +65,7 @@ intro: Use native images, lazy containers or simply the API to get the best avai
 <p>
 $image.crawl({container: 'selector-view'}); when you added new containers.<br />
 $image.clean({container: 'selector-view-you-want-to-be-cleaned'}); to clean up (when SPA no detached state will be there).<br/>
-$image.html({srcset: 'string holding srcset like in examples above'}); to give you the right image html tag (when you need it in your _.template and don't want to crawl for it).
+var img = $image.html('http://dummyimage.com/480x270/000/fff.png 480w, http://dummyimage.com/800x450/000/fff.png 768w, http://dummyimage.com/960x540/000/fff.png 1x', 'dummy-class'); to give you the right image html tag (when you need it in your _.template and don't want to crawl for it).
 </p>
 
 
