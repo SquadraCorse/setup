@@ -1,0 +1,34 @@
+.fb-icon-carrier {
+    display: inline-block;
+    background: url("../img/carriers.png") no-repeat 0 30px;
+    height: 30px;
+    text-indent: -9999px;
+}
+
+.fb-icon-carrier-KL { background-position: 0 0; width: 44px; }
+.fb-icon-carrier-AF { background-position: 0 -31px; width: 104px;}
+.fb-icon-carrier-PE { background-position: 0 -62px; width: 82px; }
+.fb-icon-carrier-RO { background-position: 0 -93px; width: 70px; }
+
+
+
+.fb-icon-carrier-small {
+    position: relative;
+    display: inline-block;
+    background: url("../img/carriers.png") no-repeat 10px 32px;
+    height: 20px;
+    text-indent: -9999px;
+    margin-right: 5px;
+}
+
+.lt-ie8 .fb-icon-carrier,
+.lt-ie8 .fb-icon-carrier-small {
+    display: block;
+    float: left;
+}
+
+.fb-icon-carrier-small-KL { background-position: -120px 0; width: 32px; }
+.fb-icon-carrier-small-AF { background-position: -120px -21px; width: 70px; }
+.fb-icon-carrier-small-PE { background-position: -120px -42px; width: 70px; }
+.fb-icon-carrier-small-RO { background-position: -120px -63px; width: 52px; }
+
