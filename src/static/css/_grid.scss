@@ -63,8 +63,12 @@
 	.fb-row .fb-grid-span9,
 	.fb-row .fb-grid-span12 { 
 		width: 100%;
-		margin: 0
+		margin-left: 0
 	}
+
+	.fb-row div { margin-bottom: 6px; }
+	.fb-row div:last-child { margin-bottom: 0; }
+
 }
 
 @media screen and (max-width: 480px) {

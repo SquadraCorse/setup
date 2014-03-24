@@ -297,7 +297,7 @@ function ($, Responsive, Events) {
         /**
          * When lazy load image comes in view make sure we append an image accordingly once
          */
-        $self.one("fb.img.lazy", function () {
+        $self.one("fb.img.lazy", function _lazyReplaceInView() {
             var srcsetInfo = new Responsive.get({
                 srcset: $self.attr('data-srcset'),
                 width: $self.innerWidth()
