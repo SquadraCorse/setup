@@ -4,17 +4,21 @@ $text-color: #333;
 /* MIXINS */
 
 
-body, html { padding: 0; margin: 0; }
+
 
 html {
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
+    padding: 0;
+    margin: 0;
 }
 
 body {
     color: $text-color;
     font: 12px/1.5 verdana, arial;
     background: #fff;
+    padding: 10px 0 0 0;
+    margin: 0;
 }
 
 a,
@@ -66,7 +70,12 @@ table {
     border: 0;
 }
 
-
+.fb-logo {
+    width: 234px;
+}
+@media screen and (max-width: 480px) {
+    .fb-logo { width: 162px; }
+}
 
 /* PRINTING */
 @media print {

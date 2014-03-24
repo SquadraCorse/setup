@@ -45,6 +45,15 @@ module.exports = function (grunt) {
                             name : 'fb/jquery'
                         },
                         {
+                            name : 'fb/backbone',
+                            exclude : [
+                                'fb/jquery'
+                            ]
+                        },
+                        {
+                            name : 'fb/lodash'
+                        },
+                        {
                             name : 'fb/i18n'
                         },
                         {
@@ -253,21 +262,24 @@ module.exports = function (grunt) {
             },
             development: {
                 options: {
-                    layout: 'default-dev.hbs'
+                    layout: 'default-dev.hbs',
+                    staticPath: '../static/'
                 },
                 src: ['src/docs/!(master-template).hbs'],
                 dest: 'src/_docs/'
             },
             live: {
                 options: {
-                    layout: 'default-live.hbs'
+                    layout: 'default-live.hbs',
+                    staticPath: '/static/<%= pkg.version %>'
                 },
                 src: ['src/docs/!(master-template).hbs'],
                 dest: 'target/build/'
             },
             page: {
                 options: {
-                    layout: 'default-site.hbs'
+                    layout: 'default-site.hbs',
+                    staticPath: '/static/<%= pkg.version %>'
                 },
                 src: ['src/docs/master-template.hbs'],
                 dest: 'target/build/'
