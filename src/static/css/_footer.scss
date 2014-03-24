@@ -1,6 +1,6 @@
 
 .fb-footer {
-	color: #fff;
+
 }
 
 .fb-footer-carriers-wrapper {
@@ -26,7 +26,9 @@
 
 
 .fb-footer-wrapper {
-	background: #888 url('../img/bg-footer.jpg') repeat-x 0 0;
+	background: #4b4b4b url('../img/bg-footer.jpg') repeat-x 0 0;
+	color: #fff;
+	padding: 0 10px;
 }
 
 /* notification */
@@ -37,5 +39,5 @@
 
 /* copyright */
 .fb-footer-copyright {
-	padding: 5px 0;
+	padding: 7px 0;
 }

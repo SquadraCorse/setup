@@ -219,7 +219,8 @@ module.exports = function (grunt) {
                 files: 'src/static/css/**/*.scss',
                 tasks: ['sass:development'],
                 options: {
-                    atBegin: true
+                    atBegin: true,
+                    livereload: true
                 }
             }
         },
