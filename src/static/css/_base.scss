@@ -54,6 +54,19 @@ a:hover {
 }
 
 
+/* MAIN RESET, TRY TO SET YOURSELF WHEN PART BECOMES WIDGET */
+
+div, h1, h2, h3, h4, h5, input, td, tr, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+a img,
+table {
+    border: 0;
+}
+
+
 
 /* PRINTING */
 @media print {
