@@ -26,7 +26,7 @@ intro: Use native images, lazy containers or simply the API to get the best avai
 
 <script>
 	require(["fb/img-responsive"], function ($Image) {
-		$Image.init({container: '#docs-img-example', treshold: 300});
+		$Image.init({container: '#docs-img-example', threshold: 300});
 	});
 </script>
 
@@ -52,12 +52,12 @@ intro: Use native images, lazy containers or simply the API to get the best avai
 
 <h2>Start</h2>
 
-<p>You can start the module by requiring it and give it the container the images are in (or leave it blank so module will look in whole document), and overrule the treshold for loading lazy images.</p>
+<p>You can start the module by requiring it and give it the container the images are in (or leave it blank so module will look in whole document), and overrule the threshold for loading lazy images.</p>
 
 <code>
 &lt;script&gt;<br />
 &nbsp;&nbsp;require([&quot;fb/img-responsive&quot;], function ($Image) {<br />
-&nbsp;&nbsp;&nbsp;&nbsp;$Image.init({container: '#docs-img-example', treshold: 300});<br />
+&nbsp;&nbsp;&nbsp;&nbsp;$Image.init({container: '#docs-img-example', threshold: 300});<br />
 &nbsp;&nbsp;});<br />
 &lt;/script&gt;<br />
 </code>

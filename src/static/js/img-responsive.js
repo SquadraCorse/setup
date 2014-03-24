@@ -40,7 +40,7 @@ function ($, Responsive, Events) {
      * Standard pixels from viewport do we start loading lazy image
      * @type {Number}
      */
-    var treshold = 100;
+    var threshold = 100;
 
     /**
      * We set some listeners only once for this module
@@ -96,7 +96,7 @@ function ($, Responsive, Events) {
             wb = wt + parseInt(height, 10),                     // WINDOW BOTTOM
             it = parseInt($image.offset().top, 10),             // IMAGE TOP POSITION
             ib = it + parseInt($image.parent().height(), 10);   // IMAGE BOTTOM (EQ IT + OUR RATIO HEIGHT)
-            return ib >= wt - treshold && it <= wb + treshold;
+            return ib >= wt - threshold && it <= wb + threshold;
         });
         /**
          * Trigger lazy load containers which are in view
@@ -176,12 +176,14 @@ function ($, Responsive, Events) {
     var _destroy = function () {
         var $item = $(this);
         var $img = $item.find('.fb-img-replace-me');
-        $item.off();
+
         if ($img.length === 1) {
-            $img.off();
             $img.remove();
         }
+
         $item.remove();
+
+        // LAZY CONTAINER ACTIVE?
         if (images.length > 0) {
             for (var i = images.length - 1; i--;) {
                 if (images[i] === null) {
@@ -189,6 +191,7 @@ function ($, Responsive, Events) {
                 }
             }
         }
+
         $img = $item = null;
     };
 
@@ -214,8 +217,6 @@ function ($, Responsive, Events) {
                 var length = $(images[j]).closest(options.container).length;
                 if (length === 1) {
                     images[j] = null;
-                    $(images[j]).off();
-                    $(images[j]).remove();
                 }
             }
         }
@@ -379,14 +380,14 @@ function ($, Responsive, Events) {
      * Public API freak implementation initcomponents or footer loading,
      * @param {object} [options] Some configuration settings
      * @param {string} [options.container] (optional) Container holding the images to be handled by this module
-     * @param {string} [options.treshold] (optional) Treshold for lazy images
+     * @param {string} [options.threshold] (optional) threshold for lazy images
      * @function
      */
     var init = function (options) {
         var selector = ".js-fb-img:not('.fb-img-done')";
-        var $collection = (options && options.container) ? $(options.container).andSelf().find(selector) : $(selector);
-        if (options && options.treshold) {
-            treshold = options.treshold;
+        var $collection = (options && options.container) ? $(options.container).addBack().find(selector) : $(selector);
+        if (options && options.threshold) {
+            threshold = options.threshold;
         }
 
         /**
