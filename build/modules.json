@@ -20,6 +20,10 @@
         "link": "footer.html"
       },
       {
+        "name": "Sprites",
+        "link": "sprites.html"
+      },
+      {
         "name": "Window Events",
         "link": "window-events.html"
       },
