@@ -46,8 +46,13 @@
     list-style: none;
     position: fixed;
     right: 0;
+    top: 0;
     z-index: 10;
     text-align: right;
+    height: 340px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 .docs-menu-item {
     display: block;
@@ -58,7 +63,6 @@
     font-weight: 500;
     line-height: 1.5em;
     letter-spacing: 1px;
-    color: #a2a8a8;
     background: #fff;
     text-decoration: none;
 }

@@ -7,7 +7,7 @@
  * Copyright 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  * Available under MIT license <http://lodash.com/license>
  */
-// #TIF-709: TEST FOR USING LATEST BACKBONE
+
 define(function () {
 
   /** Used as a safe reference for `undefined` in pre ES5 environments */

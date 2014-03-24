@@ -4,12 +4,13 @@
     "content": "Introduction",
     "list": [
       {
-        "name": "Responsive Image",
-        "link": "responsive-image.html"
+        "name": "Master Template",
+        "link": "master-template.html",
+        "cat": "css"
       },
       {
-        "name": "STYLE: button",
-        "link": "styling.html"
+        "name": "STYLE: Typhography",
+        "link": "typography.html"
       },
       {
         "name": "STYLE: grid",
@@ -20,16 +21,28 @@
         "link": "footer.html"
       },
       {
-        "name": "Sprites &amp; images",
+        "name": "STYLE: button",
+        "link": "styling.html"
+      },
+      {
+        "name": "Sprites & images",
         "link": "sprites.html"
       },
       {
-        "name": "Window Events",
+        "name": "COMP: Responsive Image",
+        "link": "responsive-image.html"
+      },
+      {
+        "name": "COMP: Window Events",
         "link": "window-events.html"
       },
       {
-        "name": "Pubsub",
+        "name": "COMP: Pubsub",
         "link": "pubsub.html"
+      },
+      {
+        "name": "Libraries",
+        "link": "libraries.html"
       }
     ]
   }

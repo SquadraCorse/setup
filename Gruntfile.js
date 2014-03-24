@@ -257,7 +257,7 @@ module.exports = function (grunt) {
                 version: '<%= pkg.version %>',
                 // assets: 'assets',
                 layoutdir: 'build/layout',
-                partials: ['build/layout/partials/*.hbs', 'src/docs/*.hbs'],
+                partials: ['build/layout/partials/*.hbs', 'src/docs/**/*.hbs'],
                 data: ['build/*.{json,yml}']
             },
             development: {
@@ -271,7 +271,7 @@ module.exports = function (grunt) {
             live: {
                 options: {
                     layout: 'default-live.hbs',
-                    staticPath: '/static/<%= pkg.version %>'
+                    staticPath: 'static/<%= pkg.version %>'
                 },
                 src: ['src/docs/!(master-template).hbs'],
                 dest: 'target/build/'
@@ -279,7 +279,7 @@ module.exports = function (grunt) {
             page: {
                 options: {
                     layout: 'default-site.hbs',
-                    staticPath: '/static/<%= pkg.version %>'
+                    staticPath: 'static/<%= pkg.version %>'
                 },
                 src: ['src/docs/master-template.hbs'],
                 dest: 'target/build/'

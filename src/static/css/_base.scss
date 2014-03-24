@@ -1,5 +1,11 @@
 /* VARS */
-$text-color: #333;
+$text-color: #051039;
+$link-color: #24A1DB;
+$title-color-h1: #042452;
+
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-grid: 700px;
 
 /* MIXINS */
 
@@ -15,7 +21,7 @@ html {
 
 body {
     color: $text-color;
-    font: 12px/1.5 verdana, arial;
+    font: 13px/1.8 Helvetica, Arial, sans-serif;
     background: #fff;
     padding: 10px 0 0 0;
     margin: 0;
@@ -23,7 +29,7 @@ body {
 
 a,
 a:visited {
-    color: #042452;
+    color: $link-color;
     text-decoration: none;
 }
 
@@ -73,7 +79,7 @@ table {
 .fb-logo {
     width: 234px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: $breakpoint-mobile) {
     .fb-logo { width: 162px; }
 }
 
