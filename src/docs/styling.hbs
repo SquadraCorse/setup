@@ -13,4 +13,18 @@ intro: Style elements like typography and buttons.
 	<a href="#" class="fb-btn"><span>Default button</span></a>
 </p> 
 
+
+
+<div class="fb-login-wrapper">
+  <input type="text" class="fb-login-field fb-login-field-username" placeholder="Gebruikersnaam" />
+  <input type="password" class="fb-login-field fb-login-field-password" placeholder="Wachtwoord" />
+</div>
+
+<script>
+	require(["fb/form-login"], function ($login) {
+		$login.init({container: '.fb-login-field-password'});
+	});
+</script>
+
+
 </div>

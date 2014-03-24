@@ -80,6 +80,12 @@ module.exports = function (grunt) {
                         },
                         {
                             name : 'fb/pubsub'
+                        },
+                        {
+                            name : 'fb/form-login',
+                            exclude : [
+                                'fb/jquery'
+                            ]
                         }
                     ],
 

@@ -13,11 +13,15 @@
         "link": "typography.html"
       },
       {
-        "name": "STYLE: grid",
+        "name": "STYLE: Grid",
         "link": "grid.html"
       },
       {
-        "name": "STYLE: footer",
+        "name": "STYLE: Menu",
+        "link": "menu.html"
+      },
+      {
+        "name": "STYLE: Footer",
         "link": "footer.html"
       },
       {

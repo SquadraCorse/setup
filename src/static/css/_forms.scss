@@ -1,0 +1,64 @@
+::-ms-reveal,
+::-ms-clear {
+  display: none !important;
+}
+
+.fb-login-wrapper { width: 364px; }
+
+
+.fb-login-field {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  margin: 0 -2px;
+  padding: 10px 4%;
+  position: relative;
+  width: 92%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+}
+
+.fb-login-field:focus {
+  border-color: #0088cc;
+  outline: transparent;
+  z-index: 2;
+}
+
+.fb-login-field-username {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: -2px;
+}
+
+.fb-login-field-password {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  width: 66%;
+  padding-right: 30%;
+}
+
+.fb-input-password-wrapper { position: relative; }
+.fb-input-password-switch { 
+  position: absolute; 
+  right: 5px; 
+  top: 10px;
+  height: 20px;
+  z-index: 5;
+  color: #24A1DB;
+  display: none;
+  text-align: right;
+  border: 0;
+  background-color: transparent;
+  outline: 0;
+  cursor: pointer;
+}
+.fb-input-password-switch:hover { text-decoration: underline; }
+
+.js-fb-password-show .fb-input-password-switch { display: block; }
+
+@media screen and (max-width: 480px) {
+  .fb-login-wrapper { width: 90%; margin: 0 5%; }
+  .fb-login-field { font-size: 16px; }
+}
