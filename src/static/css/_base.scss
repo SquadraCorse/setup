@@ -21,7 +21,7 @@ html {
 
 body {
     color: $text-color;
-    font: 13px/1.8 Helvetica, Arial, sans-serif;
+    font: 13px/1.6 Helvetica, Arial, sans-serif;
     background: #fff;
     padding: 10px 0 0 0;
     margin: 0;
@@ -94,7 +94,13 @@ p { margin-bottom: 1em; }
     }
 }
 
-
-
+/* BIG BANNER FOOTER BACKGROUND IMAGE */
+.fb-img-banner-large {
+    width: 100%;
+    height: 200px;
+    display: block;
+    background-position: center 0;
+    background-repeat: no-repeat;
+}
 
 

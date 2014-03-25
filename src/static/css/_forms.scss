@@ -59,6 +59,7 @@
 .js-fb-password-show .fb-input-password-switch { display: block; }
 
 @media screen and (max-width: 480px) {
-  .fb-login-wrapper { width: 90%; margin: 0 5%; }
+  .fb-login-wrapper { width: 100%; margin: 0; }
   .fb-login-field { font-size: 16px; }
+  .fb-input-password-switch { font-size: 14px; }
 }

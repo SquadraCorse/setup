@@ -33,6 +33,7 @@ define(["fb/jquery"], function ($) {
     };
 
     var Password = function (element) {
+
         var $element = $(element);
         var $toggle = $('<button type="button" class="fb-input-password-switch"></button>');
         var state = $element.attr('type');
@@ -45,13 +46,12 @@ define(["fb/jquery"], function ($) {
         var onFocusInput = function () {
             $element.parent().addClass('js-fb-password-show');
         };
-        var onBlurInput = function () {
-            $element.parent().removeClass('js-fb-password-show');
-        };
 
-        var toggleState = function (e) {
-            e.preventDefault();
-            e.stopPropagation();
+
+        var toggleState = function (event) {
+
+            event.preventDefault();
+            // event.stopPropagation();
 
             var state = $element.attr('type');
 
@@ -66,26 +66,26 @@ define(["fb/jquery"], function ($) {
                 break;
             }
 
-            return false;
+            $element.focus();
+
         };
 
-        var e;
+        var clickEvent;
         if (touchSupport) {
-            e = attachToTouchEvent;
+            clickEvent = attachToTouchEvent;
         } else {
-            e = attachToEvent;
+            clickEvent = attachToEvent;
         }
 
-        $element.on(e, onFocusInput);
-        $element.on('blur', onBlurInput);
+        $element.on(clickEvent, onFocusInput);
+        $element.on('keydown', onFocusInput);
+        $toggle.on(clickEvent, toggleState);
 
-        $toggle.on(e, toggleState);
 
         var changeInput = function (type) {
             $element.attr('type', type);
             $toggle.text(i18n[type]);
         };
-
 
         changeInput(state);
 
