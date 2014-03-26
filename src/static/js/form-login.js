@@ -10,6 +10,7 @@ define(["fb/jquery",
     var width = $(window).width();
 
 
+    // Can we change attribute at all?
     var canSetInputAttribute = (function () {
 
         var body = document.body,
@@ -30,15 +31,20 @@ define(["fb/jquery",
     }());
 
 
+    /**
+     * Optionally toggle show password on password input
+     * @param {string} element Container of type input
+     */
     var Password = function (element) {
 
+        // config
         var $element = $(element);
         var $toggle = $('<button type="button" class="fb-icon fb-input-password-switch">&#xe804</button>');
         var state = $element.attr('type');
 
+        // Set correct html
         $element.wrap('<div class="fb-input-password-wrapper"></div>');
         $element.after($toggle);
-
 
 
         var onFocusInput = function () {
@@ -77,11 +83,7 @@ define(["fb/jquery",
             clickEvent = attachToEvent;
         }
 
-        $element.on(clickEvent, onFocusInput);
-        $element.on('keydown', onFocusInput);
-        $toggle.on(clickEvent, toggleState);
-
-
+        // change attribute on element
         var changeInput = function (type) {
             $element.attr('type', type);
         };
@@ -99,18 +101,27 @@ define(["fb/jquery",
         };
 
         var _resizeFunction = function (e, arg) {
+            // set correct window width we get from window events
             width = arg.width;
+            // do we show password field on mobile or not
             startInput();
         };
 
 
+        // Events
+        $element.on(clickEvent, onFocusInput);
+        $element.on('keydown', onFocusInput);
+        $toggle.on(clickEvent, toggleState);
+
         Events.onResize(_resizeFunction);
 
+        // Start our instance
         changeInput(state);
         startInput();
 
     };
 
+    // PUBLIC API
     var init = function (options) {
         if (canSetInputAttribute) {
             new Password(options.container);
