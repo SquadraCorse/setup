@@ -1,11 +1,13 @@
 /* global define */
-define(["fb/jquery"], function ($) {
+define(["fb/jquery",
+    "fb/window-events"], function ($, Events) {
     "use strict";
 
     var touchSupport = window.Modernizr ? window.Modernizr.touch : false;
 
     var attachToEvent = 'click';
     var attachToTouchEvent = 'touchstart mousedown';
+    var width = $(window).width();
 
 
     var canSetInputAttribute = (function () {
@@ -84,7 +86,28 @@ define(["fb/jquery"], function ($) {
             $element.attr('type', type);
         };
 
+
+        // On mobile we always start with showing password
+        var startInput = function () {
+            if (width < 481) {
+                $toggle.addClass('fb-toggled-text');
+                changeInput('text');
+            } else {
+                $toggle.removeClass('fb-toggled-text');
+                changeInput('password');
+            }
+        };
+
+        var _resizeFunction = function (e, arg) {
+            width = arg.width;
+            startInput();
+        };
+
+
+        Events.onResize(_resizeFunction);
+
         changeInput(state);
+        startInput();
 
     };
 
