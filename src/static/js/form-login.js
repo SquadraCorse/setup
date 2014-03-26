@@ -27,15 +27,11 @@ define(["fb/jquery"], function ($) {
         return result;
     }());
 
-    var i18n = {
-        'password': 'toon',
-        'text': 'verberg'
-    };
 
     var Password = function (element) {
 
         var $element = $(element);
-        var $toggle = $('<button type="button" class="fb-input-password-switch"></button>');
+        var $toggle = $('<button type="button" class="fb-icon fb-input-password-switch">&#xe804</button>');
         var state = $element.attr('type');
 
         $element.wrap('<div class="fb-input-password-wrapper"></div>');
@@ -57,9 +53,11 @@ define(["fb/jquery"], function ($) {
 
             switch (state) {
             case 'text':
+                $toggle.removeClass('fb-toggled-text');
                 changeInput('password');
                 break;
             case 'password':
+                $toggle.addClass('fb-toggled-text');
                 changeInput('text');
                 break;
             default:
@@ -84,7 +82,6 @@ define(["fb/jquery"], function ($) {
 
         var changeInput = function (type) {
             $element.attr('type', type);
-            $toggle.text(i18n[type]);
         };
 
         changeInput(state);

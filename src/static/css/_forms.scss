@@ -43,20 +43,24 @@
 .fb-input-password-switch { 
   position: absolute; 
   right: 5px; 
-  top: 10px;
+  top: 8px;
   height: 20px;
   z-index: 5;
-  color: #24A1DB;
+  color: #ddd;
   display: none;
   text-align: right;
   border: 0;
   background-color: transparent;
   outline: 0;
   cursor: pointer;
+  font-size: 18px;
 }
 .fb-input-password-switch:hover { text-decoration: underline; }
 
 .js-fb-password-show .fb-input-password-switch { display: block; }
+
+.fb-input-password-wrapper .fb-toggled-text { color: #24A1DB; }
+
 
 @media screen and (max-width: 480px) {
   .fb-login-wrapper { width: 100%; margin: 0; }
