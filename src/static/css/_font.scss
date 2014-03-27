@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'fbicons';
+    src: url('../font/fontello.eot');
+    src: url('../font/fontello.eot?#iefix') format('embedded-opentype'),
+         url('../font/fontello.ttf') format('truetype'),
+         url('../font/fontello.svg#f.fbicons') format('svg'),
+         url('../font/fontello.woff') format('woff');         
+         
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fb-icon {
+    font-family: 'fbicons', verdana, arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    speak: none;
+}
+
+ [class^="fb-icon-"]:before, [class*="fb-icon-"]:before {
+
+  font-family: "fbicons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+ 
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+ 
+}
+ 
+.fb-icon-search:before { content: '\e803'; } /* '' */
+.fb-icon-youtube:before { content: '\e80d'; } /* '' */
+.fb-icon-picture:before { content: '\e801'; } /* '' */
+.fb-icon-ok:before { content: '\e800'; } /* '' */
+.fb-icon-eye-off:before { content: '\e804'; } /* '' */
+.fb-icon-tags:before { content: '\e805'; } /* '' */
+.fb-icon-attention-alt:before { content: '\e806'; } /* '' */
+.fb-icon-attention:before { content: '\e807'; } /* '' */
+.fb-icon-mail:before { content: '\e802'; } /* '' */
+.fb-icon-angle-right:before { content: '\e80a'; } /* '' */
+.fb-icon-angle-double-right:before { content: '\e809'; } /* '' */
+.fb-icon-flight:before { content: '\e80b'; } /* '' */
+.fb-icon-facebook:before { content: '\e80e'; } /* '' */
+.fb-icon-gplus:before { content: '\e810'; } /* '' */
+.fb-icon-linkedin:before { content: '\e80c'; } /* '' */
+.fb-icon-twitter:before { content: '\e80f'; } /* '' */
+.fb-icon-phone:before { content: '\e808'; } /* '' */

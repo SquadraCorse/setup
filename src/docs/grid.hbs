@@ -9,16 +9,17 @@ intro: Main responsive grid
 </style>
 
 <div class="docs-grid-demo">
+
 <!-- only wrapper for our demo, never put wrapper arround row except row itself -->
+
+
+<h3 class="fb-row fb-h4">No indent</h3>
+
+
 <div class="fb-row docs-fb-row">
-	Row 
+	<div class="fb-grid-span12">Row </div>
 </div>
 
-<div class="fb-row">
-	<div class="fb-row-indent">
-		<div class="fb-grid-span12 docs-fb-row">Indented row </div>
-	</div>
-</div>
 
 <div class="fb-row">
 	<div class="fb-grid-span8 docs-fb-row">Block 8-12</div>
@@ -61,6 +62,23 @@ intro: Main responsive grid
 			<div class="fb-grid-span6 docs-fb-row"></div>
 			<div class="fb-grid-span6 docs-fb-row"></div>
 		</div>		
+	</div>
+</div>
+
+
+<h3 class="fb-row fb-h4">Indent</h3>
+
+
+<div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span12 docs-fb-row">Indented row </div>
+	</div>
+</div>
+
+<div class="fb-row">
+	<div class="fb-row-indent">
+		<div class="fb-grid-span8 docs-fb-row">Block 8-12</div>
+		<div class="fb-grid-span4 docs-fb-row">Block 4-12</div>
 	</div>
 </div>
 

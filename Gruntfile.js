@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                     baseUrl : './',
                     dir     : 'target/rjs',
                     paths   : {
-                        'fb' : './js'
+                        'fb' : './js',
+                        'fb/nls' : './nls'
                     },
                     optimize : 'uglify',
 
@@ -84,7 +85,10 @@ module.exports = function (grunt) {
                         {
                             name : 'fb/form-login',
                             exclude : [
-                                'fb/jquery'
+                                'fb/jquery',
+                                'fb/window-events',
+                                'fb/i18n',
+                                'fb/nls/generic'
                             ]
                         }
                     ],

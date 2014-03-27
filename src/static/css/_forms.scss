@@ -9,19 +9,18 @@
 .fb-login-field {
   background-color: #fff;
   border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
   margin: 0 -2px;
   padding: 10px 4%;
+  border-radius: 4px;
+  font-size: 14px;
   position: relative;
   width: 92%;
   -moz-appearance: none;
   -webkit-appearance: none;
-
 }
 
 .fb-login-field:focus {
-  border-color: #0088cc;
+  border-color: $link-color;
   outline: transparent;
   z-index: 2;
 }
@@ -35,17 +34,17 @@
 .fb-login-field-password {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-  width: 66%;
-  padding-right: 30%;
+  width: 80%;
+  padding-right: 16%;
 }
 
 .fb-input-password-wrapper { position: relative; }
 .fb-input-password-switch { 
   position: absolute; 
-  right: 5px; 
   top: 8px;
+  right: 5px;
   height: 20px;
-  z-index: 5;
+  z-index: 4;
   color: #ddd;
   display: none;
   text-align: right;
@@ -55,15 +54,16 @@
   cursor: pointer;
   font-size: 18px;
 }
-.fb-input-password-switch:hover { text-decoration: underline; }
+
+.fb-input-password-switch:hover { opacity: 0.9; }
 
 .js-fb-password-show .fb-input-password-switch { display: block; }
 
-.fb-input-password-wrapper .fb-toggled-text { color: #24A1DB; }
+.fb-input-password-wrapper .fb-toggled-text { color: $link-color; }
 
 
 @media screen and (max-width: 480px) {
   .fb-login-wrapper { width: 100%; margin: 0; }
   .fb-login-field { font-size: 16px; }
-  .fb-input-password-switch { font-size: 14px; }
+  .fb-input-password-switch { font-size: 20px; }
 }

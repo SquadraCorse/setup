@@ -1,6 +1,7 @@
 /* global define */
 define(["fb/jquery",
-    "fb/window-events"], function ($, Events) {
+    "fb/i18n!fb/nls/generic",
+    "fb/window-events"], function ($, I18n, Events) {
     "use strict";
 
     var touchSupport = window.Modernizr ? window.Modernizr.touch : false;
@@ -86,6 +87,14 @@ define(["fb/jquery",
         // change attribute on element
         var changeInput = function (type) {
             $element.attr('type', type);
+            var text;
+            if (type === 'password') {
+                text = I18n.show;
+            } else {
+                text = I18n.hide;
+            }
+            // Do this or set innerText instead of using icon
+            $toggle.attr('title', text);
         };
 
 

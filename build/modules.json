@@ -21,11 +21,11 @@
         "link": "footer.html"
       },
       {
-        "name": "STYLE: button",
-        "link": "styling.html"
+        "name": "STYLE: Form",
+        "link": "forms.html"
       },
       {
-        "name": "Sprites & images",
+        "name": "STYLE: Sprites & images",
         "link": "sprites.html"
       },
       {
@@ -43,6 +43,10 @@
       {
         "name": "Libraries",
         "link": "libraries.html"
+      },
+      {
+        "name": "Home",
+        "link": "index.html"
       }
     ]
   }
