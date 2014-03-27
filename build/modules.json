@@ -33,6 +33,10 @@
         "link": "responsive-image.html"
       },
       {
+        "name": "COMP: Select language",
+        "link": "language.html"
+      },
+      {
         "name": "COMP: Window Events",
         "link": "window-events.html"
       },

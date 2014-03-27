@@ -49,6 +49,6 @@ Happy coding. Work from master, make a feature branch if you wish to upgrade a c
 
 
 ## Release History
-
+27-03-2014 v0.0.3 Added i18n support and lazy modules load using Stephan Bakker his innitcomponents
 23-03-2014 v0.0.2 Added SASS support and added visual check
 22-03-2014 v0.0.1 Basic setup using Grunt and Require for building/testing and documentation

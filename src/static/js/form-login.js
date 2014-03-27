@@ -36,10 +36,9 @@ define(["fb/jquery",
      * Optionally toggle show password on password input
      * @param {string} element Container of type input
      */
-    var Password = function (element) {
+    var Password = function ($element) {
 
         // config
-        var $element = $(element);
         var $toggle = $('<button type="button" class="fb-icon fb-input-password-switch">&#xe804</button>');
         var state = $element.attr('type');
 
@@ -131,9 +130,9 @@ define(["fb/jquery",
     };
 
     // PUBLIC API
-    var init = function (options) {
+    var init = function (element, context) {
         if (canSetInputAttribute) {
-            new Password(options.container);
+            new Password(element, context);
         }
     };
 

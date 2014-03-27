@@ -1,6 +1,8 @@
 /**
- * BUNDLE: 50-70kb minified mosted used sources
+ * BUNDLE: 50kb minified mosted used sources
  */
 
 /* JQUERY */
 /* IMG RESPONSIVE */
+/* WINDOW EVENTS */
+/* I18N */

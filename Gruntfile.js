@@ -90,6 +90,19 @@ module.exports = function (grunt) {
                                 'fb/i18n',
                                 'fb/nls/generic'
                             ]
+                        },
+                        {
+                            name : 'fb/start',
+                            exclude : [
+                                'fb/jquery',
+                                'fb/img-responsive'
+                            ]
+                        },
+                        {
+                            name : 'fb/select-language',
+                            exclude : [
+                                'fb/jquery'
+                            ]
                         }
                     ],
 
@@ -125,7 +138,9 @@ module.exports = function (grunt) {
                     // MOST USED COMPONENTS CACHED LIVE LONG
                     'target/build/static/<%= pkg.version %>/js/bundle.js': [
                         'target/rjs/js/jquery.js',
+                        'target/rjs/js/i18n.js',
                         'target/rjs/js/window-events.js',
+                        'target/rjs/js/initcomponents.js',
                         'target/rjs/js/img-responsive.js'
                     ]
                 }
