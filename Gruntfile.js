@@ -34,11 +34,14 @@ module.exports = function (grunt) {
 
                     preserveLicenseComments: false,
 
-                    findNestedDependencies: true,
+                    findNestedDependencies: false,
+
+                    normalizeDirDefines: "skip",
+
+                    skipDirOptimize: true,
 
                     optimizeCss: 'standard.keepLines',
 
-                    preserveLicenceComments : true,
 
                     // All modules overhere
                     modules : [
@@ -61,6 +64,12 @@ module.exports = function (grunt) {
                             name : 'fb/text'
                         },
                         {
+                            name : 'fb/window-events',
+                            exclude : [
+                                'fb/jquery'
+                            ]
+                        },
+                        {
                             name : 'fb/img-responsive',
                             exclude : [
 								'fb/jquery', // don't include jquery in our module
@@ -68,15 +77,18 @@ module.exports = function (grunt) {
                             ]
                         },
                         {
-                            name : 'fb/window-events',
+                            name : 'fb/initcomponents',
                             exclude : [
                                 'fb/jquery'
                             ]
                         },
                         {
-                            name : 'fb/initcomponents',
+                            name : 'fb/app',
                             exclude : [
-                                'fb/jquery'
+                                'fb/jquery',
+                                'fb/initcomponents',
+                                'fb/img-responsive',
+                                'fb/window-events'
                             ]
                         },
                         {
@@ -89,13 +101,6 @@ module.exports = function (grunt) {
                                 'fb/window-events',
                                 'fb/i18n',
                                 'fb/nls/generic'
-                            ]
-                        },
-                        {
-                            name : 'fb/start',
-                            exclude : [
-                                'fb/jquery',
-                                'fb/img-responsive'
                             ]
                         },
                         {
