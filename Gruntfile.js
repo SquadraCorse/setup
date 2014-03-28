@@ -448,7 +448,7 @@ module.exports = function (grunt) {
         uglify: {
             my_target: {
                 files: {
-                'target/rjs/modernizr.js': ['src/static/modernizr.js']
+                    'target/rjs/modernizr.js': ['src/static/modernizr.js']
                 }
             }
         }
