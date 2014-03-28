@@ -135,13 +135,13 @@ module.exports = function (grunt) {
             'build' : {
                 'files' : {
                     // MAIN FILE CACHING AT MOST 1 DAY
-                    'target/build/static/core.js' : [
+                    'target/build/<%= pkg.version %>/core.js' : [
                         'target/rjs/modernizr.js',
                         'target/rjs/require.js',
                         'target/rjs/path.js'
                     ],
                     // MOST USED COMPONENTS CACHED LIVE LONG
-                    'target/build/static/<%= pkg.version %>/js/bundle.js': [
+                    'target/build/<%= pkg.version %>/js/bundle.js': [
                         'target/rjs/js/jquery.js',
                         'target/rjs/js/i18n.js',
                         'target/rjs/js/window-events.js',
@@ -156,10 +156,9 @@ module.exports = function (grunt) {
         'clean': {
             'static': {
                 'src': [
-                    'target/build/static/<%= pkg.version %>/core.js',
-                    'target/build/static/<%= pkg.version %>/build.txt',
-                    'target/build/static/<%= pkg.version %>/_css/**',
-                    'target/build/static/<%= pkg.version %>/css/**' // Remove everything except style.css or foo.css (future)
+                    'target/build/<%= pkg.version %>/build.txt',
+                    'target/build/<%= pkg.version %>/_css/**',
+                    'target/build/<%= pkg.version %>/css/**' // Remove everything except style.css or foo.css (future)
                 ]
             },
             'all': {
@@ -172,12 +171,12 @@ module.exports = function (grunt) {
             'build': {
                 cwd: 'target/rjs',
                 src: ['**'],
-                dest: 'target/build/static/<%= pkg.version %>',
+                dest: 'target/build/<%= pkg.version %>',
                 expand: true
             },
             'full': {
                 src: ['build/htaccess/one-year.txt'],
-                dest: 'target/build/static/<%= pkg.version %>/.htaccess'
+                dest: 'target/build/<%= pkg.version %>/.htaccess'
             }
 
         },
@@ -197,7 +196,7 @@ module.exports = function (grunt) {
             // PUT SASSED DECLARATIONS ON SINGLE LINE
             css : {
                 src: ['target/sass/*.css'],
-                dest: 'target/build/static/<%= pkg.version %>/css/',
+                dest: 'target/build/<%= pkg.version %>/css/',
                 replacements: [
                     {
                         from: '}',
@@ -301,7 +300,7 @@ module.exports = function (grunt) {
             live: {
                 options: {
                     layout: 'default-live.hbs',
-                    staticPath: 'static/<%= pkg.version %>'
+                    staticPath: '<%= pkg.version %>'
                 },
                 src: ['src/docs/!(master-template).hbs'],
                 dest: 'target/build/'
@@ -309,7 +308,7 @@ module.exports = function (grunt) {
             page: {
                 options: {
                     layout: 'default-site.hbs',
-                    staticPath: 'static/<%= pkg.version %>'
+                    staticPath: '<%= pkg.version %>'
                 },
                 src: ['src/docs/master-template.hbs'],
                 dest: 'target/build/'
@@ -444,6 +443,14 @@ module.exports = function (grunt) {
                     'target/sass/docs.css': 'src/static/css/docs.scss'
                 }
             }
+        },
+
+        uglify: {
+            my_target: {
+                files: {
+                'target/rjs/modernizr.js': ['src/static/modernizr.js']
+                }
+            }
         }
 
 
@@ -467,9 +474,25 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-phantomcss');
     grunt.loadNpmTasks("grunt-blanket-mocha");
     grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default grunt task
-    grunt.registerTask('default', ['clean:all', 'jshint', 'blanket_mocha', 'requirejs', 'replace:path', 'copy', 'concat', 'clean:static', 'sass:live', 'replace:css', 'assemble', 'compress', 'server']);
+    grunt.registerTask('default', [
+        'clean:all',
+        'jshint',
+        'blanket_mocha',
+        'requirejs',
+        'uglify',
+        'replace:path',
+        'copy',
+        'concat',
+        'clean:static',
+        'sass:live',
+        'replace:css',
+        'assemble',
+        'compress',
+        'server'
+    ]);
 
     // Develop (changes docs/css/js have livereload)
     grunt.registerTask('dev', ['assemble:development', 'connect:development', 'watch']);
